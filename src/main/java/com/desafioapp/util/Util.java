@@ -1,4 +1,4 @@
-package com.desafioapp.config;
+package com.desafioapp.util;
 
 import java.util.ArrayList;
 import java.util.List;

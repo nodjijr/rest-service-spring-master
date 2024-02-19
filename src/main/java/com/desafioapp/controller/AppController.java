@@ -5,9 +5,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import com.desafioapp.config.Greeting;
-import com.desafioapp.config.Util;
 import com.desafioapp.dto.AwardsIntervalDTO;
 import com.desafioapp.dto.MovieWinDTO;
 import com.desafioapp.dto.MovieDTO;
@@ -36,7 +32,11 @@ import com.desafioapp.models.StudiosOrderWinns;
 import com.desafioapp.repository.AwardsIntervalRepository;
 import com.desafioapp.repository.MovieRepository;
 import com.desafioapp.repository.StudioOrderWinnsRepository;
+import com.desafioapp.util.Util;
 import com.fasterxml.jackson.core.JsonProcessingException;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @ControllerAdvice
 @RestController
@@ -215,7 +215,7 @@ public class AppController {
 		}			
 		
 		ReturnStatus returnStatus = new ReturnStatus("00201", request.getRequestURL().toString());		
-		Movie movie = movieRepository.findOne(idPar);		
+		Movie movie = movieRepository.findById(idPar).get();		
 		
 	    if (movie == null) {
 	        throw new NotFoundException("");

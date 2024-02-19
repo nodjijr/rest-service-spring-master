@@ -15,5 +15,6 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
 	
 	String strQry = "SELECT  year,  SUM(CASE WHEN winner=true THEN 1 ELSE 0 END) AS Wins FROM movies GROUP BY year HAVING WINS>1";	
     @Query(value = strQry, nativeQuery = true)
-    List<AwardsIntervalWinnsCount> moviesWinnersMoreOneYear();    
+    List<AwardsIntervalWinnsCount> moviesWinnersMoreOneYear();
+
 }

@@ -1,12 +1,15 @@
 package com.desafioapp.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+import lombok.Data;
 
-@javax.persistence.Entity(name = "AWARDSINTERVAL")
+@Entity(name = "AWARDSINTERVAL")
+@Data
 public class AwardsInterval {
 	
 	@Id

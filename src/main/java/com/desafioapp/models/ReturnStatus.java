@@ -2,45 +2,16 @@ package com.desafioapp.models;
 
 import java.util.Date;
 
+import lombok.Data;
+
+@Data
 public class ReturnStatus {
 
-	public String codreturn;
+	private String codreturn;
 	private Date timestamp;
-	public String status;
-	public String message;
-	public String path;
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getPath() {
-		return path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-	}
-
-	public Date getTimestamp() {
-		return timestamp;
-	}
-
-	public void setTimestamp(Date timestamp) {
-		this.timestamp = timestamp;
-	}
+	private String status;
+	private String message;
+	private String path;
 
 	public ReturnStatus(String codreturn, String path) {
 		super();
@@ -86,8 +57,6 @@ public class ReturnStatus {
 			this.status = "405";
 			break;
 		}
-		
-		
 
 	}
 

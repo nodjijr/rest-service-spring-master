@@ -13,9 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.desafioapp.util.AwardsConstants;
 
 public class CSVToH2 {
-	
-	@Autowired
-	private DatabaseConfiguration dbConfig;
 
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "org.h2.Driver";
@@ -139,6 +136,7 @@ public class CSVToH2 {
 	}
 
 	private Connection getConnection() {
+		DatabaseConfiguration dbConfig = new DatabaseConfiguration();
 		dbConfig.createDatabase();
 		return dbConfig.getConnection();
 	}
