@@ -8,8 +8,6 @@ import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.desafioapp.util.AwardsConstants;
 
 public class CSVToH2 {

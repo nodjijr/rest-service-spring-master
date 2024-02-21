@@ -1,9 +1,6 @@
 Manifest-Version: 1.0
-Built-By: nodji
-Build-Jdk: 17.0.6
+Build-Jdk-Spec: 17
 Implementation-Title: desafio-rest-service
-Implementation-Version: 1.3.0.RELEASE
-Implementation-Vendor-Id: com.desafioapp
-Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Version: 3.2.2
 Created-By: Maven Integration for Eclipse
 

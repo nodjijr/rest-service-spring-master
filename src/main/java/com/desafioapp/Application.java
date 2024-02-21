@@ -13,6 +13,8 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import com.desafioapp.data.CSVToH2;
 import com.desafioapp.exception.HandlerMappingFilterBadRequest;
 
+import jakarta.servlet.Filter;
+
 @SpringBootApplication
 public class Application {
 
@@ -24,8 +26,8 @@ public class Application {
 
 	@Bean
 	@Autowired
-	FilterRegistrationBean listHandlers(RequestMappingHandlerMapping requestMappingHandlerMapping) {
-		FilterRegistrationBean register = new org.springframework.boot.web.servlet.FilterRegistrationBean();
+	FilterRegistrationBean<Filter> listHandlers(RequestMappingHandlerMapping requestMappingHandlerMapping) {
+		FilterRegistrationBean register = new FilterRegistrationBean();
 		register.setFilter(new HandlerMappingFilterBadRequest(requestMappingHandlerMapping));
 		register.setName("handlerListFilter");
 		register.setUrlPatterns(Arrays.asList(new String[] { "/*" }));
