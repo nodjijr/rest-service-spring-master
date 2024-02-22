@@ -12,11 +12,12 @@
 
 Essa solução fornece os vencedores da categoria Pior Filme do Golden Raspberry Awards.
 
+O servidor esta configurado para subir com a porta de forma aleátoria, após a criação do server, verifique em qual porta foi criado
 == Endpoins
 
 Obtém os vencedores, informando um ano.
 ----
-http://localhost:8080/movies/{year}
+http://localhost:{$port}/movies/{year}
 ----
 
 == Para Rodar o Aplicativo
@@ -46,7 +47,7 @@ O método HTTP OPTIONS retorna cabeçalhos de controle de acesso na resposta, pe
 
 [source,json]
 ----
-curl -i -X OPTIONS http://localhost:8080/greetings
+curl -i -X OPTIONS http://localhost:{$port}/greetings
 ----
 
 [source,json]
