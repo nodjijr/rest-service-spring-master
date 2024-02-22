@@ -77,12 +77,14 @@ public class CSVToH2 {
 					System.out.println(ex.toString());
 				}
 			}
+			conn.setAutoCommit(false);
 			prepStatement = conn.prepareStatement(AwardsConstants.DELETE_MOVIES);
 			prepStatement.executeUpdate();
 			prepStatement = conn.prepareStatement(AwardsConstants.DELETE_STUDIOS);
 			prepStatement.executeUpdate();
 			prepStatement = conn.prepareStatement(AwardsConstants.DELETE_PRODUCERS);
 			prepStatement.executeUpdate();
+			conn.commit();
 
 		} catch (FileNotFoundException e) {
 			status = false;
