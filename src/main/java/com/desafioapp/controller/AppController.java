@@ -17,8 +17,8 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 import com.desafioapp.config.Greeting;
 import com.desafioapp.dto.AwardsIntervalDTO;
-import com.desafioapp.dto.MovieWinDTO;
 import com.desafioapp.dto.MovieDTO;
+import com.desafioapp.dto.MovieWinDTO;
 import com.desafioapp.dto.StudioOrderWinnsDTO;
 import com.desafioapp.entity.AwardsInterval;
 import com.desafioapp.entity.Movie;
@@ -91,23 +91,23 @@ public class AppController {
 		return moviesData;
 	}
 	
-	@RequestMapping(value = "/movies/yearsmoreonewinners")
+	@RequestMapping(value = "/movies/yearsmoreonewinners", method = RequestMethod.GET)
 	public MovieWinDTO listWinnersMoreOneYear(HttpServletRequest request) 
 			throws MethodNotAllowedException{
 		
 		String strMethod = "GET";		
 		System.out.println("Method: "+request.getMethod());
 		if(!request.getMethod().equals(strMethod)) {
-			throw new MethodNotAllowedException("");
+			throw new MethodNotAllowedException(""); 
 		}		
 		
-		Iterable<AwardsIntervalWinnsCount> ite = movieRepository.moviesWinnersMoreOneYear();
-		List<AwardsIntervalWinnsCount> listagem = Util.toList(ite);	
+		var ite = movieRepository.moviesWinnersMoreOneYear();
+		List<AwardsIntervalWinnsCount> listagem = Util.toList(ite);
 		
 		@SuppressWarnings({ "rawtypes" })
 		Iterator itr = listagem.iterator();		
 	
-		List<AwardsIntervalWinnsCount> dataWinn = new ArrayList<AwardsIntervalWinnsCount>();	
+		List<AwardsIntervalWinnsCount> dataWinn = new ArrayList<>();	
 		MovieWinDTO dataYears = new MovieWinDTO();	
 		
 		while(itr.hasNext()) {

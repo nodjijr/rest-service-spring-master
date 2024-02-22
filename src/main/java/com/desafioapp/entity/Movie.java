@@ -19,8 +19,8 @@ public class Movie {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "year", length = 4, nullable = false)
-	private String year;
+	@Column(name = "yearm", length = 4, nullable = false)
+	private String yearm;
 
 	@Column(name = "title", length = 255, nullable = false)
 	private String title;
@@ -39,12 +39,12 @@ public class Movie {
 	public Movie() {
 	}
 
-	public String getYear() {
-		return year;
+	public String getYearm() {
+		return yearm;
 	}
 
-	public void setYear(String year) {
-		this.year = year;
+	public void setYearm(String year) {
+		this.yearm = year;
 	}
 
 	public String getTitle() {

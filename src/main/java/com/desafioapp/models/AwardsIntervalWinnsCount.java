@@ -1,16 +1,34 @@
 package com.desafioapp.models;
 
-import lombok.Data;
 
-@Data
 public class AwardsIntervalWinnsCount {
-	private String year;
-	private int winnerCount;
+	private String yearm;
+	private Integer wins;
 
-	public AwardsIntervalWinnsCount(String year, int wincount) {
+	public AwardsIntervalWinnsCount() {
 		super();
-		this.year = year;
-		this.winnerCount = wincount;
+	}
+	public AwardsIntervalWinnsCount(String yearm, Integer wins) {
+		super();
+		this.setYearm(yearm);
+		this.setWins(wins);
+	}
+
+
+	public Integer getWins() {
+		return wins;
+	}
+
+	public void setWins(Integer wins) {
+		this.wins = wins;
+	}
+
+	public String getYearm() {
+		return yearm;
+	}
+
+	public void setYearm(String yearm) {
+		this.yearm = yearm;
 	}	
 
 }

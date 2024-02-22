@@ -20,8 +20,8 @@ public class AwardsInterval {
 	@Column(name = "producer", length = 255)
 	private String producer;
 	
-	@Column(name = "interval")
-	private int interval;
+	@Column(name = "intervaly")
+	private int intervaly;
 	
 	@Transient
 	private int previousWin;
@@ -36,11 +36,11 @@ public class AwardsInterval {
 	public void setProducer(String producer) {
 		this.producer = producer;
 	}
-	public int getInterval() {
-		return interval;
+	public int getIntervaly() {
+		return intervaly;
 	}
-	public void setInterval(int interval) {
-		this.interval = interval;
+	public void setIntervaly(int intervaly) {
+		this.intervaly = intervaly;
 	}
 	
 	public int getPreviousWin() {
@@ -56,10 +56,10 @@ public class AwardsInterval {
 		this.followingWin = followingWin;
 	}
 	
-	public AwardsInterval(String producer, int interval, int previousWin, int followingWin) {
+	public AwardsInterval(String producer, int intervaly, int previousWin, int followingWin) {
 		super();
 		this.producer = producer;
-		this.interval = interval;
+		this.intervaly = intervaly;
 		this.previousWin = previousWin;
 		this.followingWin = followingWin;
 	}
