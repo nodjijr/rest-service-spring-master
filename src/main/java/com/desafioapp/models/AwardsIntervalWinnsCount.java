@@ -2,8 +2,8 @@ package com.desafioapp.models;
 
 
 public class AwardsIntervalWinnsCount {
-	private String yearm;
-	private Integer wins;
+	String yearm;
+	Integer wins;
 
 	public AwardsIntervalWinnsCount() {
 		super();

@@ -47,7 +47,7 @@ O método HTTP OPTIONS retorna cabeçalhos de controle de acesso na resposta, pe
 
 [source,json]
 ----
-curl -i -X OPTIONS http://localhost:{$port}/greetings
+curl -i -X OPTIONS http://localhost:{$port}/movies/{year}
 ----
 
 [source,json]
